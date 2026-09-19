@@ -49,7 +49,6 @@ export default function Projects() {
     <section id="projects" className="py-20 px-4 md:px-8 max-w-6xl mx-auto">
       <motion.div
         className="mb-12"
-        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
@@ -60,7 +59,7 @@ export default function Projects() {
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
         variants={containerVariants}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
       >

@@ -27,14 +27,13 @@ export default function About() {
     <motion.section
       id="about"
       className="section-container mx-auto py-24 px-6"
-      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
     >
       <motion.h2 
         className="font-heading text-3xl md:text-4xl text-paper mb-8"
         variants={itemVariants}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true }}
       >
@@ -45,7 +44,7 @@ export default function About() {
       <motion.div 
         className="bg-ink-dark rounded-xl border border-slate/20 overflow-hidden shadow-lg mb-8"
         variants={itemVariants}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true }}
       >
@@ -78,7 +77,7 @@ export default function About() {
       <motion.div 
         className="flex flex-col gap-4 text-paper/90"
         variants={containerVariants}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true }}
       >

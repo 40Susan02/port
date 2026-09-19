@@ -26,7 +26,7 @@ export default function Contact() {
     <section id="contact" className="py-20">
       <motion.div
         variants={containerVariants}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true }}
         className="relative z-10 mx-auto w-full"
