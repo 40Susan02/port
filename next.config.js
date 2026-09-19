@@ -47,16 +47,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-];
-
-const nextConfig = {
-  poweredBy: false,
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: securityHeaders,
-    },
-  ],
-};
-
-module.exports = nextConfig;
