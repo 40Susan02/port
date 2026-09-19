@@ -43,6 +43,11 @@ section:not(#hero) {
   padding-inline: clamp(1.25rem, 4vw, 4rem);
 }
 
+/* Keep content readable if a client-side reveal observer misses its first pass. */
+section:not(#hero) [style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
 section:not(#hero)::before {
   content: "";
   position: absolute;
