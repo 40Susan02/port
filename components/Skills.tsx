@@ -56,14 +56,15 @@ const skillVariants = {
 export default function Skills() {
   return (
     <section id="skills" className="py-20 px-4 md:px-8 max-w-6xl mx-auto">
-      <motion.h2 
-        className="text-3xl md:text-4xl font-mono font-bold mb-12 text-white"
+      <motion.div
+        className="mb-12"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="text-electric">##</span> Skills
-      </motion.h2>
+        <p className="eyebrow">02 / The toolkit</p>
+        <h2 className="section-title">Curious by default</h2>
+      </motion.div>
 
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -75,7 +76,7 @@ export default function Skills() {
         {skillGroups.map((group, groupIndex) => (
           <motion.div 
             key={groupIndex}
-            className="bg-black/40 border border-white/10 rounded-lg overflow-hidden backdrop-blur-sm"
+            className="editorial-card overflow-hidden transition-transform duration-300 hover:-translate-y-1"
             variants={itemVariants}
           >
             {/* Panel Header */}

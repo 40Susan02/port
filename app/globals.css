@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --ink: #1a1a2e;
-  --paper: #e8e6e1;
-  --electric: #4fc3f7;
-  --signal: #ab47bc;
-  --terminal: #66bb6a;
-  --slate: #64748b;
-  --ink-light: #16213e;
-  --ink-dark: #0f0f1e;
+  --ink: #11140f;
+  --paper: #f3f0e6;
+  --electric: #d9ff57;
+  --signal: #ff7652;
+  --terminal: #9bd66f;
+  --slate: #8f9988;
+  --ink-light: #1b2418;
+  --ink-dark: #080a08;
+  --line: rgba(243, 240, 230, 0.14);
+  --muted-line: rgba(143, 153, 136, 0.22);
 }
 
 /* ---- Base ---- */
@@ -18,12 +20,111 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  background: var(--ink);
 }
 
 body {
   background-color: var(--ink);
+  background-image: linear-gradient(rgba(217, 255, 87, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 255, 87, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
   color: var(--paper);
   font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+}
+
+section:not(#hero) {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 4rem);
+}
+
+section:not(#hero)::before {
+  content: "";
+  position: absolute;
+  inset: 0 1rem auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--muted-line), transparent);
+}
+
+section:not(#hero) h2 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--paper);
+}
+
+section:not(#hero) h2 span {
+  color: var(--electric);
+}
+
+#hero {
+  background: radial-gradient(circle at 78% 42%, rgba(217, 255, 87, 0.12), transparent 28%), var(--ink) !important;
+}
+
+#hero > div:first-of-type {
+  opacity: 0.7;
+}
+
+#hero .rounded-lg {
+  border-radius: 0;
+  border-color: var(--muted-line);
+  box-shadow: 16px 16px 0 rgba(217, 255, 87, 0.08);
+}
+
+#hero .bg-\[\#18181b\] {
+  background: rgba(27, 36, 24, 0.86);
+}
+
+#hero .bg-\[\#27272a\] {
+  background: rgba(8, 10, 8, 0.72);
+  border-color: var(--muted-line);
+}
+
+#hero .text-\[\#4fc3f7\] {
+  color: var(--electric);
+}
+
+#hero .bg-\[\#4fc3f7\] {
+  background: var(--electric);
+}
+
+#hero .border-\[\#4fc3f7\] {
+  border-color: var(--electric);
+}
+
+#contact {
+  max-width: 1280px;
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+#contact::after {
+  content: "LET'S TALK";
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  color: rgba(217, 255, 87, 0.07);
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(4rem, 14vw, 12rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.04em;
+}
+
+a, button, input {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -54,7 +155,7 @@ body {
 
 @layer components {
   .panel {
-    @apply rounded-lg border border-slate/20 bg-ink-light/50 backdrop-blur-sm;
+    @apply rounded-none border border-white/10 bg-ink-light/70 backdrop-blur-sm;
   }
 
   .panel-header {
@@ -88,12 +189,50 @@ body {
   }
 
   .tag-pill {
-    @apply inline-flex items-center rounded-md border border-slate/30 bg-ink px-2.5 py-1 font-mono text-xs text-electric;
+    @apply inline-flex items-center rounded-none border border-electric/30 bg-electric/5 px-2.5 py-1 font-mono text-xs text-electric;
   }
 
   .section-container {
     @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
   }
+}
+
+/* ---- Portfolio surfaces ---- */
+
+.eyebrow {
+  @apply font-mono text-[0.68rem] uppercase tracking-[0.22em] text-electric;
+}
+
+.section-title {
+  @apply mt-3 font-heading text-4xl font-bold leading-none text-paper md:text-6xl;
+}
+
+.section-title::after {
+  content: ".";
+  color: var(--signal);
+}
+
+.editorial-card {
+  border: 1px solid var(--muted-line);
+  background: linear-gradient(135deg, rgba(27, 36, 24, 0.92), rgba(17, 20, 15, 0.8));
+  box-shadow: 12px 12px 0 rgba(217, 255, 87, 0.06);
+}
+
+.lime-button {
+  @apply inline-flex items-center justify-center gap-3 border border-electric bg-electric px-5 py-3 font-mono text-sm font-bold text-ink transition-transform duration-200 hover:-translate-y-1 hover:bg-paper;
+}
+
+.outline-button {
+  @apply inline-flex items-center justify-center gap-3 border border-white/20 px-5 py-3 font-mono text-sm font-bold text-paper transition-colors duration-200 hover:border-electric hover:text-electric;
+}
+
+.contact-link {
+  @apply flex items-center justify-between border-b border-white/10 py-4 font-mono text-sm text-paper transition-colors hover:border-electric hover:text-electric;
+}
+
+::selection {
+  background-color: var(--electric);
+  color: var(--ink);
 }
 
 /* ---- Reduced Motion ---- */

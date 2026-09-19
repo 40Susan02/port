@@ -29,74 +29,47 @@ export default function Contact() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto"
+        className="relative z-10 mx-auto w-full"
       >
-        <motion.h2 variants={itemVariants} className="font-mono text-2xl text-electric mb-10">
-          <span className="opacity-50">## </span>Contact
-        </motion.h2>
+        <motion.div variants={itemVariants} className="mb-12 max-w-3xl">
+          <p className="eyebrow">05 / Contact</p>
+          <h2 className="section-title">Have a good idea?</h2>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate md:text-xl">
+            I&apos;m looking for a place to learn fast, contribute thoughtfully, and build useful things with good people.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Column: Contact Info */}
-          <motion.div variants={itemVariants} className="bg-ink border border-slate/20 rounded-lg overflow-hidden shadow-xl">
-            <div className="bg-ink-dark px-4 py-2 border-b border-slate/20 flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-slate/20"></div>
-                <div className="w-3 h-3 rounded-full bg-slate/20"></div>
-                <div className="w-3 h-3 rounded-full bg-slate/20"></div>
-              </div>
-              <span className="ml-2 font-mono text-xs text-slate opacity-70">bash</span>
-            </div>
-            <div className="p-6 font-mono text-sm overflow-x-auto">
-              <div className="text-slate mb-4">
-                <span className="text-electric">❯</span> cat contact.json
-              </div>
-              <pre className="text-paper">
-{`{
-  "`}<span className="text-electric">email</span>{`": "`}<a href="mailto:susandahal69@gmail.com" className="text-[#a6e22e] hover:underline">susandahal69@gmail.com</a>{`",
-  "`}<span className="text-electric">phone</span>{`": "`}<a href="tel:9861920729" className="text-[#a6e22e] hover:underline">9861920729</a>{`",
-  "`}<span className="text-electric">github</span>{`": "`}<a href="https://github.com/40Susan02" target="_blank" rel="noopener noreferrer" className="text-[#a6e22e] hover:underline">github.com/40Susan02</a>{`",
-  "`}<span className="text-electric">location</span>{`": "`}<span className="text-[#a6e22e]">Kathmandu, Nepal</span>{`"
-}`}
-              </pre>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+          <motion.div variants={itemVariants} className="editorial-card p-6 md:p-10">
+            <p className="eyebrow mb-8">Direct line</p>
+            <div className="space-y-1">
+              <a href="mailto:susandahal69@gmail.com" className="contact-link text-base md:text-lg">
+                <span className="text-slate">Email</span>
+                <span>susandahal69@gmail.com <span className="ml-3 text-electric">↗</span></span>
+              </a>
+              <a href="tel:9861920729" className="contact-link text-base md:text-lg">
+                <span className="text-slate">Phone</span>
+                <span>9861920729 <span className="ml-3 text-electric">↗</span></span>
+              </a>
+              <a href="https://github.com/40Susan02" target="_blank" rel="noopener noreferrer" className="contact-link text-base md:text-lg">
+                <span className="text-slate">GitHub</span>
+                <span>40Susan02 <span className="ml-3 text-electric">↗</span></span>
+              </a>
             </div>
           </motion.div>
 
-          {/* Right Column: Availability */}
-          <motion.div variants={itemVariants} className="bg-ink border border-slate/20 rounded-lg overflow-hidden shadow-xl">
-            <div className="bg-ink-dark px-4 py-2 border-b border-slate/20 flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-slate/20"></div>
-                <div className="w-3 h-3 rounded-full bg-slate/20"></div>
-                <div className="w-3 h-3 rounded-full bg-slate/20"></div>
+          <motion.div variants={itemVariants} className="flex flex-col justify-between border-l border-electric/30 pl-6 md:pl-10">
+            <div>
+              <p className="eyebrow mb-6">Currently open to</p>
+              <div className="flex flex-wrap gap-3">
+                <span className="tag-pill">Internships</span>
+                <span className="tag-pill">Entry-level roles</span>
+                <span className="tag-pill">Remote / Kathmandu</span>
               </div>
-              <span className="ml-2 font-mono text-xs text-slate opacity-70">availability.config</span>
             </div>
-            <div className="p-6 font-body space-y-6">
-              
-              <div>
-                <h3 className="font-mono text-electric text-sm mb-3"># Open to</h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-electric/10 text-electric border border-electric/20">Internships</span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-electric/10 text-electric border border-electric/20">Entry-level roles</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-mono text-electric text-sm mb-3"># Work preference</h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Remote</span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">On-site in Kathmandu</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-mono text-electric text-sm mb-3"># Availability</h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20">Flexible hours</span>
-                </div>
-              </div>
-
-            </div>
+            <a href="mailto:susandahal69@gmail.com" className="lime-button mt-12 w-fit">
+              Start a conversation <span aria-hidden="true">↗</span>
+            </a>
           </motion.div>
         </div>
       </motion.div>

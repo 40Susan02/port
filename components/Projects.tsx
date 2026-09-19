@@ -47,14 +47,15 @@ const cardVariants = {
 export default function Projects() {
   return (
     <section id="projects" className="py-20 px-4 md:px-8 max-w-6xl mx-auto">
-      <motion.h2 
-        className="text-3xl md:text-4xl font-mono font-bold mb-12 text-white"
+      <motion.div
+        className="mb-12"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="text-electric">##</span> Projects
-      </motion.h2>
+        <p className="eyebrow">03 / Selected work</p>
+        <h2 className="section-title">Things I&apos;ve built</h2>
+      </motion.div>
 
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
@@ -68,7 +69,7 @@ export default function Projects() {
             key={index}
             variants={cardVariants}
             whileHover={{ y: -4 }}
-            className="flex flex-col bg-black/40 border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm transition-colors hover:border-electric/50"
+            className="editorial-card flex flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:border-electric/60"
           >
             {/* Terminal Window Header */}
             <div className="bg-black/60 px-4 py-3 flex items-center border-b border-white/10 relative">

@@ -72,13 +72,13 @@ export default function Navbar() {
     <nav
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-ink/90 backdrop-blur-md shadow-md border-b border-slate/20' : 'bg-transparent border-b border-transparent'
+        scrolled ? 'bg-ink/90 backdrop-blur-md shadow-md border-b border-white/10' : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a 
           href="#" 
-          className="font-mono text-electric text-xl font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-ink rounded"
+          className="font-heading text-electric text-xl font-bold tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         >
           susan.dev
         </a>

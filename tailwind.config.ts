@@ -8,16 +8,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-         ink: {
-              DEFAULT: "#1a1a2e",
-              light: "#16213e",
-              dark: "#0f0f1e",
-              },
-        paper: "#e8e6e1",
-        electric: "#4fc3f7",
-        signal: "#ab47bc",
-        terminal: "#66bb6a",
-        slate: "#64748b",
+        ink: {
+          DEFAULT: "#11140f",
+          light: "#1b2418",
+          dark: "#080a08",
+        },
+        paper: "#f3f0e6",
+        electric: "#d9ff57",
+        signal: "#ff7652",
+        terminal: "#9bd66f",
+        slate: "#8f9988",
       },
       fontFamily: {
         heading: ["var(--font-space-grotesk)", "sans-serif"],

@@ -26,7 +26,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="section-container max-w-4xl mx-auto py-24 px-6"
+      className="section-container mx-auto py-24 px-6"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
@@ -38,8 +38,8 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <span className="font-mono text-electric">## </span>
-        About Me
+        <span className="font-mono text-electric">01 / </span>
+        About me
       </motion.h2>
 
       <motion.div 
@@ -60,7 +60,7 @@ export default function About() {
           </div>
         </div>
         
-        <div className="p-6 font-mono text-sm md:text-base leading-relaxed overflow-x-auto whitespace-pre">
+        <div className="p-6 font-mono text-sm leading-relaxed break-words whitespace-pre-wrap md:p-8 md:text-base">
           <span className="text-slate/60">/**</span><br />
           <span className="text-slate/60"> *</span><span className="text-paper/80"> About Susan</span><br />
           <span className="text-slate/60"> * </span><br />
