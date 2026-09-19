@@ -108,14 +108,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
-/* ---- Tailwind Ink Light ---- */
-
-@layer base {
-  .bg-ink-light {
-    background-color: #16213e;
-  }
-  .bg-ink-dark {
-    background-color: #0f0f1e;
-  }
-}

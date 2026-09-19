@@ -8,7 +8,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#1a1a2e",
+         ink: {
+              DEFAULT: "#1a1a2e",
+              light: "#16213e",
+              dark: "#0f0f1e",
+              },
         paper: "#e8e6e1",
         electric: "#4fc3f7",
         signal: "#ab47bc",

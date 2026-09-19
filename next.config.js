@@ -37,6 +37,19 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  poweredByHeader: false,
+  headers: async () => [
+    {
+      source: "/(.*)",
+      headers: securityHeaders,
+    },
+  ],
+};
+
+module.exports = nextConfig;
+];
+
+const nextConfig = {
   poweredBy: false,
   headers: async () => [
     {
